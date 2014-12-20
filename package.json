@@ -16,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/MBing/TF-ShoppingList/issues"
   },
-  "homepage": "https://github.com/MBing/TF-ShoppingList"
+  "homepage": "https://github.com/MBing/TF-ShoppingList",
+  "dependencies": {
+    "cool-ascii-faces": "~1.3.x"
+    },
+  "engines": {
+	"node": "0.10.x"
+  }
 }
