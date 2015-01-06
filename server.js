@@ -67,6 +67,7 @@ db.once('open', function callback () {
     console.error('connection success');
 });
 
-server.listen(9000, function(){
-   console.log('listening on 9000');
+var port = process.env.PORT || 9000;
+server.listen(port, function() {
+    console.log("Listening on %d", port);
 });
