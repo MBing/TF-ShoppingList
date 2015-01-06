@@ -1,6 +1,8 @@
 var http = require('http');
 var url = require('url');
 var items = [];
+var myitems = require('./items');
+var mongoose = require('mongoose');
 
 var server = http.createServer(function (req, res) {
     switch (req.method) {
@@ -53,6 +55,16 @@ var server = http.createServer(function (req, res) {
             res.end('Item updated succesfully');
         }
     }
+});
+
+mongoose.connect('mongodb://martin:martinshop@ds031561.mongolab.com:31561/tf_shopping_list');
+
+var db = mongoose.connection;
+db.on('error', function callback () {
+    console.error('connection error');
+});
+db.once('open', function callback () {
+    console.error('connection success');
 });
 
 server.listen(9000, function(){
